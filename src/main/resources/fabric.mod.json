@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "thehallow",
+  "version": "${version}",
+  "name": "The Hallow",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Zundrel",
+	"Shnupbups",
+	"B0undarybreaker"
+  ],
+  "contact": {
+    "sources": "https://github.com/AllOfFabric/The-Hallow"
+  },
+  "license": "MIT",
+  "icon": "assets/thehallow/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.alloffabric.thehallow.TheHallow"
+    ]
+  },
+  "mixins": [
+    "thehallow.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.2",
+    "fabric": "*",
+    "minecraft": "1.15.x"
+  }
+}
