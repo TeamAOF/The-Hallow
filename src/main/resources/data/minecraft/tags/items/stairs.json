@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"thehallow:tainted_sandstone_stairs",
+		"thehallow:smooth_tainted_sandstone_stairs",
+		"thehallow:tainted_stone_stairs",
+		"thehallow:tainted_cobblestone_stairs",
+		"thehallow:tainted_stone_brick_stairs",
+		"thehallow:deadwood_stairs"
+	]
+}

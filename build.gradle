@@ -39,6 +39,14 @@ dependencies {
 
 	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
+	modImplementation("com.github.Draylar:world-traveler:${world_traveler_version}") {
+		transitive = false
+	}
+	include "com.github.Draylar:world-traveler:${world_traveler_version}"
+	
+	modImplementation "io.github.cottonmc:Jankson-Fabric:${jankson_fabric_version}"
+	include "io.github.cottonmc:Jankson-Fabric:${jankson_fabric_version}"
+	
 	modImplementation ("me.shedaniel:RoughlyEnoughItems:${project.rei_version}") { exclude(module: "ModMenu") }
 	
 	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"

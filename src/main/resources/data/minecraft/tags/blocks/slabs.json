@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		"thehallow:tainted_sandstone_slab",
+		"thehallow:smooth_tainted_sandstone_slab",
+		"thehallow:cut_tainted_sandstone_slab",
+		"thehallow:tainted_stone_slab",
+		"thehallow:tainted_cobblestone_slab",
+		"thehallow:smooth_tainted_stone_slab",
+		"thehallow:tainted_stone_brick_slab",
+		"thehallow:deadwood_slab"
+	]
+}

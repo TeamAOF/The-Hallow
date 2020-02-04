@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values": [
+		"thehallow:tainted_sandstone_wall",
+		"thehallow:tainted_cobblestone_wall",
+		"thehallow:tainted_stone_brick_wall"
+	]
+}

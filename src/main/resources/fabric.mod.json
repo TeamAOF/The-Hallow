@@ -18,7 +18,10 @@
   "entrypoints": {
     "main": [
       "io.github.alloffabric.thehallow.TheHallow"
-    ]
+    ],
+	"client": [
+	  "io.github.alloffabric.thehallow.TheHallowClient"
+	]
   },
   "mixins": [
     "thehallow.mixins.json"

@@ -1,0 +1,10 @@
+{
+	"entity.crow.ambient": {
+		"category": "neutral",
+		"sounds": [
+			"thehallow:crow/crow1",
+			"thehallow:crow/crow2"
+		],
+		"subtitle": "subtitle.thehallow.crow.ambient"
+	}
+}

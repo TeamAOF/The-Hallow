@@ -3,9 +3,19 @@
   "package": "io.github.alloffabric.thehallow.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+	"AbstractTreeFeatureMixin",
+	"AnvilBlockMixin",
+	"PlantBlockMixin", 
+	"WitchEntityMixin",
+	"ThrownPotionEntityMixin",
+	"LivingEntityMixin",
+	"BlockEntityTypeMixin"
   ],
   "client": [
-    
+	"client.GameRendererMixin",
+	"client.SignBlockEntityRendererMixin",
+	"client.TexturedRenderLayersMixin",
+	"client.BiomeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
