@@ -1,6 +1,7 @@
 package io.github.alloffabric.thehallow.world.dimension;
 
 import com.github.draylar.worldtraveler.api.dimension.utils.SkyAngleCalculator;
+import net.minecraft.util.math.MathHelper;
 
 public class HallowedSkyAngleCalculator implements SkyAngleCalculator {
 	// Day fraction function created using https://www.desmos.com/calculator/h5zvtx8jj6
@@ -31,6 +32,8 @@ public class HallowedSkyAngleCalculator implements SkyAngleCalculator {
 
 	@Override //combination of wave and zigzag day functions
 	public float calculate(long ticks, float v) {
-		return (2f * zigzagDayFunction(ticks) + waveDayFunction(ticks)) / 3f;
+		double double_1 = MathHelper.fractionalPart((double) ticks / 24000.0D - 0.25D);
+		double double_2 = 0.5D - Math.cos(double_1 * 3.141592653589793D) / 2.0D;
+		return (float) (double_1 * 2.0D + double_2) / 3.0F;
 	}
 }

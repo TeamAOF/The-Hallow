@@ -17,6 +17,7 @@ public class HallowedForestBiome extends HallowedBaseBiome {
 
 		HallowedBiomeFeatures.addGrass(this);
 		HallowedBiomeFeatures.addLakes(this);
+		HallowedBiomeFeatures.addColoredPumpkins(this);
 		HallowedBiomeFeatures.addDefaultHallowedTrees(this);
 		HallowedBiomeFeatures.addHallowedForestTrees(this);
 		HallowedBiomeFeatures.addWells(this);

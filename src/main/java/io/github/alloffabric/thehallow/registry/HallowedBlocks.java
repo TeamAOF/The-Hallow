@@ -1,7 +1,9 @@
 package io.github.alloffabric.thehallow.registry;
 
+import com.google.common.collect.ImmutableMap;
 import io.github.alloffabric.thehallow.TheHallow;
 import io.github.alloffabric.thehallow.block.*;
+import io.github.alloffabric.thehallow.block.ColoredPumpkinBlock.PumpkinColor;
 import io.github.alloffabric.thehallow.item.WitchedPumpkinItem;
 import io.github.alloffabric.thehallow.world.DeadwoodSaplingGenerator;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
@@ -136,6 +138,44 @@ public class HallowedBlocks {
 	public static final Block GREEN_RUG = register("green_rug", new HallowedCarpetBlock(DyeColor.GREEN, FabricBlockSettings.copy(Blocks.GREEN_CARPET).build()));
 	public static final Block RED_RUG = register("red_rug", new HallowedCarpetBlock(DyeColor.RED, FabricBlockSettings.copy(Blocks.RED_CARPET).build()));
 	public static final Block BLACK_RUG = register("black_rug", new HallowedCarpetBlock(DyeColor.BLACK, FabricBlockSettings.copy(Blocks.BLACK_CARPET).build()));
+
+	public static final Block RAINBOW_PUMPKIN = register("rainbow_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.LIME).build(), PumpkinColor.RAINBOW), new Item.Settings().group(TheHallow.PUMPKINS).rarity(Rarity.UNCOMMON));
+	public static final Block RAINBOW_CARVED_PUMPKIN = register("rainbow_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.LIME).build(), PumpkinColor.RAINBOW), new Item.Settings().group(TheHallow.PUMPKINS).rarity(Rarity.UNCOMMON));
+	public static final Block RAINBOW_JACK_O_LANTERN = register("rainbow_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.LIME).build(), PumpkinColor.RAINBOW), new Item.Settings().group(TheHallow.PUMPKINS).rarity(Rarity.UNCOMMON));
+
+	public static final Block RED_PUMPKIN = register("red_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.RED).build(), PumpkinColor.RED), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block RED_CARVED_PUMPKIN = register("red_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.RED).build(), PumpkinColor.RED), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block RED_JACK_O_LANTERN = register("red_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.RED).build(), ColoredPumpkinBlock.PumpkinColor.RED), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final Block YELLOW_PUMPKIN = register("yellow_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.YELLOW).build(), PumpkinColor.YELLOW), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block YELLOW_CARVED_PUMPKIN = register("yellow_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.YELLOW).build(), PumpkinColor.YELLOW), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block YELLOW_JACK_O_LANTERN = register("yellow_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.YELLOW).build(), PumpkinColor.YELLOW), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final Block BLUE_PUMPKIN = register("blue_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.BLUE).build(), PumpkinColor.BLUE), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block BLUE_CARVED_PUMPKIN = register("blue_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.BLUE).build(), PumpkinColor.BLUE), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block BLUE_JACK_O_LANTERN = register("blue_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.BLUE).build(), PumpkinColor.BLUE), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final Block TAN_PUMPKIN = register("tan_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.GRAY).build(), PumpkinColor.TAN), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block TAN_CARVED_PUMPKIN = register("tan_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.GRAY).build(), PumpkinColor.TAN), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block TAN_JACK_O_LANTERN = register("tan_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.GRAY).build(), PumpkinColor.TAN), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final Block WHITE_PUMPKIN = register("white_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.WHITE).build(), PumpkinColor.WHITE), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block WHITE_CARVED_PUMPKIN = register("white_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.WHITE).build(), PumpkinColor.WHITE), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block WHITE_JACK_O_LANTERN = register("white_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.WHITE).build(), PumpkinColor.WHITE), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final Block WITCHED_PUMPKIN = register("witched_pumpkin", new ColoredPumpkinBlock(FabricBlockSettings.copy(Blocks.PUMPKIN).materialColor(MaterialColor.PURPLE).build(), PumpkinColor.WITCHED), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block WITCHED_CARVED_PUMPKIN = register("witched_carved_pumpkin", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.CARVED_PUMPKIN).materialColor(MaterialColor.PURPLE).build(), PumpkinColor.WITCHED), new Item.Settings().group(TheHallow.PUMPKINS));
+	public static final Block WITCHED_JACK_O_LANTERN = register("witched_jack_o_lantern", new ColoredCarvedPumpkinBlock(FabricBlockSettings.copy(Blocks.JACK_O_LANTERN).materialColor(MaterialColor.PURPLE).build(), PumpkinColor.WITCHED), new Item.Settings().group(TheHallow.PUMPKINS));
+
+	public static final ImmutableMap<PumpkinColor, Block> CARVED_PUMPKIN_COLORS = new ImmutableMap.Builder<PumpkinColor, Block>()
+		.put(PumpkinColor.RED, HallowedBlocks.RED_CARVED_PUMPKIN)
+		.put(PumpkinColor.YELLOW, HallowedBlocks.YELLOW_CARVED_PUMPKIN)
+		.put(PumpkinColor.BLUE, HallowedBlocks.BLUE_CARVED_PUMPKIN)
+		.put(PumpkinColor.TAN, HallowedBlocks.TAN_CARVED_PUMPKIN)
+		.put(PumpkinColor.WHITE, HallowedBlocks.WHITE_CARVED_PUMPKIN)
+		.put(PumpkinColor.WITCHED, HallowedBlocks.WITCHED_CARVED_PUMPKIN)
+		.put(PumpkinColor.RAINBOW, HallowedBlocks.RAINBOW_CARVED_PUMPKIN)
+		.build();
 
 	private HallowedBlocks() {
 		// NO-OP

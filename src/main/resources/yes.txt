@@ -1,0 +1,104 @@
+setInterval(function() {
+    var arr = document.getElementsByClassName("markup-2BOw-j containerCozy-336-Cz markupRtl-3M0hmN");
+    var regex = /\b(?!yes\b)\w+/g;
+    for (var i = 0; i < arr.length; i++) {
+        var original = arr[i].innerHTML;
+        if (regex.test(original) && !(original.includes("yes"))) {
+            arr[i].innerHTML = original.replace(regex, "yes");
+        }
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("avatar-VxgULZ");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].src = "https://i.imgur.com/kLR64Gd.jpg"
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("name-uJV0GL");
+    for (var i = 0; i < arr.length; i++) {
+        var original = arr[i].innerHTML;
+        if (!(/.*<p\/>/.test(original))) {
+            arr[i].innerHTML = "yes";
+        }
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("username-1A8OIy");
+    for (var i = 0; i < arr.length; i++) {
+        var original = arr[i].innerHTML;
+        if (!(/.*<p\/>/.test(original))) {
+            arr[i].innerHTML = "yes";
+        }
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("subText-1KtqkB");
+    for (var i = 0; i < arr.length; i++) {
+        var original = arr[i].innerHTML;
+        if (!(/.*<p\/>/.test(original))) {
+            arr[i].innerHTML = "yes";
+        }
+    }
+}, 0500);
+
+setInterval(function() {
+    document.getElementsByClassName("name-3YKhmS")[0].innerHTML = "yes";
+    var arr = document.getElementsByClassName("name-3_Dsmg");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("membersGroup-v9BXpm container-2ax-kl");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("size14-e6ZScH title-eS5yk3");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("customStatus-3tC2ig");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("placeholder-37qJjk fontSize15Padding-2bMrCq");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("name-IbjUBS container-2ax-kl");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("timestampCozy-1HNQR2 timestampBase-2p8O71");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);
+
+setInterval(function() {
+    var arr = document.getElementsByClassName("title-29uC1r base-1x0h_U size16-1P40sf");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = "yes";
+    }
+}, 0500);

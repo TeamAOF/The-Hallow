@@ -89,7 +89,10 @@ public class HallowedBiomeFeatures {
 	}
 
 	public static void addDecoration(Biome biome) {
-
 		biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(HallowedFeatures.BRAMBLES, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(2)));
+	}
+
+	public static void addColoredPumpkins(Biome biome) {
+		biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(HallowedFeatures.COLORED_PUMPKIN, FeatureConfig.DEFAULT, Decorator.CHANCE_HEIGHTMAP_DOUBLE, new ChanceDecoratorConfig(32)));
 	}
 }
