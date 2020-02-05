@@ -2,6 +2,7 @@ package io.github.alloffabric.thehallow.world.biome;
 
 import com.google.common.collect.Lists;
 import io.github.alloffabric.thehallow.api.HallowedBiomeInfo;
+import io.github.alloffabric.thehallow.registry.HallowedEntities;
 import io.github.alloffabric.thehallow.registry.HallowedFeatures;
 import io.github.alloffabric.thehallow.world.feature.HallowedBiomeFeatures;
 import net.minecraft.entity.EntityCategory;
@@ -30,7 +31,7 @@ public abstract class HallowedBaseBiome extends Biome implements HallowedBiomeIn
 		HallowedBiomeFeatures.addDisks(this);
 		HallowedBiomeFeatures.addOres(this);
 		HallowedBiomeFeatures.addMineables(this);
-//		this.addSpawn(EntityCategory.CREATURE, new SpawnEntry(HallowedEntities.CROW, 40, 1, 2));
+		this.addSpawn(EntityCategory.CREATURE, new SpawnEntry(HallowedEntities.CROW, 40, 1, 2));
 		this.addSpawn(EntityCategory.MONSTER, new SpawnEntry(EntityType.ENDERMAN, 10, 1, 4));
 		this.addSpawn(EntityCategory.MONSTER, new SpawnEntry(EntityType.WITCH, 5, 1, 1));
 //		this.addSpawn(EntityCategory.MONSTER, new SpawnEntry(HallowedEntities.MUMMY, 95, 4, 4));

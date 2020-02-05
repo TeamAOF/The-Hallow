@@ -12,6 +12,7 @@ public class TheHallowClient implements ClientModInitializer {
 		HallowedRenderLayers.init();
 		HallowedClientNetworking.init();
 		HallowedColors.init();
+		HallowedEntityRenderers.init();
 
 		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new FluidResourceLoader());
 	}

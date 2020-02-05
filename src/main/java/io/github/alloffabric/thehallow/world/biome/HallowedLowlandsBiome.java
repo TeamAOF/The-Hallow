@@ -9,9 +9,9 @@ import net.minecraft.world.gen.feature.MineshaftFeatureConfig;
 public class HallowedLowlandsBiome extends HallowedBaseBiome {
 	public HallowedLowlandsBiome() {
 		super(new Settings().surfaceBuilder(SURFACE_BUILDER).precipitation(Precipitation.NONE).category(Category.PLAINS).depth(0.125f).scale(0.08f).temperature(0.7f).downfall(0.8f).waterColor(0x3F76E4).waterFogColor(0x050533));
-		
+
 		this.addStructureFeature(Feature.MINESHAFT.configure(new MineshaftFeatureConfig(0.004D, MineshaftFeature.Type.NORMAL)));
-		
+
 		HallowedBiomeFeatures.addGrass(this);
 		HallowedBiomeFeatures.addLakes(this);
 		HallowedBiomeFeatures.addColoredPumpkins(this);

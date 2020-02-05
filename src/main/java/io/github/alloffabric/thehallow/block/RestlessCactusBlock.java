@@ -1,10 +1,9 @@
 package io.github.alloffabric.thehallow.block;
 
+import io.github.alloffabric.thehallow.entity.RestlessCactusEntity;
 import io.github.alloffabric.thehallow.registry.HallowedBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockPlacementEnvironment;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
+import io.github.alloffabric.thehallow.registry.HallowedEntities;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.damage.DamageSource;
@@ -60,20 +59,20 @@ public class RestlessCactusBlock extends Block {
 
 				}
 			}
-//			if (world.getBlockState(pos.down(1)).getBlock() == HallowedBlocks.TAINTED_SAND && random.nextInt(2) == 0) {
-//				int height = 0;
-//				int age = 0;
-//				for (height = 0; world.getBlockState(pos.up(height)).getBlock() == this; height++) {
-//					age = world.getBlockState(pos.up(height)).get(AGE);
-//					world.setBlockState(pos.up(height), Blocks.AIR.getDefaultState());
-//				}
-//
-//				RestlessCactusEntity entity = new RestlessCactusEntity(HallowedEntities.RESTLESS_CACTUS, world);
-//				entity.setPosition(pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f);
-//				entity.setCactusHeight(height);
-//				entity.age = age;
-//				world.spawnEntity(entity);
-//			}
+			if (world.getBlockState(pos.down(1)).getBlock() == HallowedBlocks.TAINTED_SAND && random.nextInt(2) == 0) {
+				int height = 0;
+				int age = 0;
+				for (height = 0; world.getBlockState(pos.up(height)).getBlock() == this; height++) {
+					age = world.getBlockState(pos.up(height)).get(AGE);
+					world.setBlockState(pos.up(height), Blocks.AIR.getDefaultState());
+				}
+
+				RestlessCactusEntity entity = new RestlessCactusEntity(HallowedEntities.RESTLESS_CACTUS, world);
+				entity.setPos(pos.getX() + 0.5f, pos.getY(), pos.getZ() + 0.5f);
+				entity.setCactusHeight(height);
+				entity.age = age;
+				world.spawnEntity(entity);
+			}
 		}
 	}
 

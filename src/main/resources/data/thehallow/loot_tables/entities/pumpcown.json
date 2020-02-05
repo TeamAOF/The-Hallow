@@ -66,21 +66,6 @@
 					"name": "minecraft:beef"
 				}
 			]
-		},
-		{
-			"conditions": [
-				{
-					"condition": "random_chance",
-					"chance": 0.01
-				}
-			],
-			"rolls": 1,
-			"entries": [
-				{
-					"type": "item",
-					"name": "thehallow:golden_candy_corn"
-				}
-			]
 		}
 	]
 }

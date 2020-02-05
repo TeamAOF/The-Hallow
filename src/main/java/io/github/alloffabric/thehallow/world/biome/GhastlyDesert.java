@@ -15,9 +15,9 @@ public class GhastlyDesert extends HallowedBaseBiome {
 
 	public GhastlyDesert() {
 		super(new Settings().surfaceBuilder(DESERT_SURFACE_BUILDER).precipitation(Precipitation.NONE).category(Category.DESERT).precipitation(Precipitation.NONE).category(Category.DESERT).depth(0.125F).scale(0.05F).temperature(2.0F).downfall(0.0F).waterColor(0x3F76E4).waterFogColor(0x050533));
-		
+
 		this.addStructureFeature(Feature.MINESHAFT.configure(new MineshaftFeatureConfig(0.004D, MineshaftFeature.Type.NORMAL)));
-		
+
 		this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, HallowedBiomeFeatures.configureFeature(HallowedFeatures.DEADER_BUSH, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(2)));
 		this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, Feature.RANDOM_PATCH.configure(RESTLESS_CACTUS_CONFIG).createDecoratedFeature(Decorator.COUNT_HEIGHTMAP_DOUBLE.configure(new CountDecoratorConfig(10))));
 		//this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, HallowedBiomeFeatures.configureFeature(HallowedFeatures.RESTLESS_CACTUS, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(10)));

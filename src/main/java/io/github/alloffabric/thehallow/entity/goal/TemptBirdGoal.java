@@ -1,4 +1,4 @@
-package com.fabriccommunity.thehallow.entity.goal;
+package io.github.alloffabric.thehallow.entity.goal;
 
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.Goal;
@@ -24,18 +24,18 @@ public class TemptBirdGoal extends Goal {
 	private double lastPlayerYaw;
 	private int cooldown;
 	private boolean active;
-	
+
 	public TemptBirdGoal(MobEntityWithAi mobEntityWithAi, double speed, boolean canBeScared, Ingredient food) {
 		this.mob = mobEntityWithAi;
 		this.speed = speed;
 		this.food = food;
 		this.canBeScared = canBeScared;
-		this.setControls(EnumSet.of(Goal.Control.MOVE, Goal.Control.LOOK));
+		this.setControls(EnumSet.of(Control.MOVE, Control.LOOK));
 		if (!(mobEntityWithAi.getNavigation() instanceof BirdNavigation)) {
 			throw new IllegalArgumentException("Unsupported mob type for TemptBirdGoal");
 		}
 	}
-	
+
 	@Override
 	public boolean canStart() {
 		if (this.cooldown > 0) {
@@ -50,11 +50,11 @@ public class TemptBirdGoal extends Goal {
 			}
 		}
 	}
-	
+
 	protected boolean isTemptedBy(ItemStack stack) {
 		return this.food.test(stack);
 	}
-	
+
 	@Override
 	public boolean shouldContinue() {
 		if (this.canBeScared()) {
@@ -62,7 +62,7 @@ public class TemptBirdGoal extends Goal {
 				if (this.closestPlayer.squaredDistanceTo(this.lastPlayerX, this.lastPlayerY, this.lastPlayerZ) > 0.010000000000000002D) {
 					return false;
 				}
-				
+
 				if (Math.abs((double) this.closestPlayer.pitch - this.lastPlayerPitch) > 5.0D || Math.abs((double) this.closestPlayer.yaw - this.lastPlayerYaw) > 5.0D) {
 					return false;
 				}
@@ -71,18 +71,18 @@ public class TemptBirdGoal extends Goal {
 				this.lastPlayerY = this.closestPlayer.getY();
 				this.lastPlayerZ = this.closestPlayer.getZ();
 			}
-			
+
 			this.lastPlayerPitch = this.closestPlayer.pitch;
 			this.lastPlayerYaw = this.closestPlayer.yaw;
 		}
-		
+
 		return this.canStart();
 	}
-	
+
 	protected boolean canBeScared() {
 		return this.canBeScared;
 	}
-	
+
 	@Override
 	public void start() {
 		this.lastPlayerX = this.closestPlayer.getX();
@@ -90,7 +90,7 @@ public class TemptBirdGoal extends Goal {
 		this.lastPlayerZ = this.closestPlayer.getZ();
 		this.active = true;
 	}
-	
+
 	@Override
 	public void stop() {
 		this.closestPlayer = null;
@@ -98,18 +98,18 @@ public class TemptBirdGoal extends Goal {
 		this.cooldown = 100;
 		this.active = false;
 	}
-	
+
 	@Override
 	public void tick() {
-		this.mob.getLookControl().lookAt(this.closestPlayer, (float) (this.mob.method_5986() + 20), (float) this.mob.getLookPitchSpeed());
+		this.mob.getLookControl().lookAt(this.closestPlayer, (float) (this.mob.getBodyYawSpeed() + 20), (float) this.mob.getLookPitchSpeed());
 		if (this.mob.squaredDistanceTo(this.closestPlayer) < 6.25D) {
 			this.mob.getNavigation().stop();
 		} else {
 			this.mob.getNavigation().startMovingTo(this.closestPlayer, this.speed);
 		}
-		
+
 	}
-	
+
 	public boolean isActive() {
 		return this.active;
 	}
