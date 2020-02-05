@@ -21,7 +21,7 @@ public class AbstractTreeFeatureMixin {
 	private static void isNaturalDeceased(TestableWorld testableWorld, BlockPos blockPos, CallbackInfoReturnable<Boolean> cir) {
 		if (testableWorld.testBlockState(blockPos, (blockState) -> {
 			Block block = blockState.getBlock();
-			return block == HallowedBlocks.DECEASED_GRASS_BLOCK || block == HallowedBlocks.DECEASED_DIRT;
+			return block == HallowedBlocks.DECEASED_GRASS_BLOCK || block == HallowedBlocks.DECEASED_DIRT || block == HallowedBlocks.DECEASED_MOSS;
 		})) cir.setReturnValue(true);
 	}
 }

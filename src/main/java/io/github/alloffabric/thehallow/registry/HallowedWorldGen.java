@@ -9,27 +9,48 @@ import net.minecraft.world.biome.Biome;
 
 public class HallowedWorldGen {
 	public static final HallowedBiomeGroup HALLOW = new HallowedBiomeGroup(0)
-		.addBiome(HallowedBiomes.HALLOWED_FOREST, 1);
+		.addBiome(HallowedBiomes.HALLOWED_FOREST, 1)
+		.addBiome(HallowedBiomes.HALLOWED_LOWLANDS, 1)
+		.addBiome(HallowedBiomes.HALLOWED_SWAMP, 1)
+		.addBiome(HallowedBiomes.GHASTLY_DESERT, 1);
 
 	public static final HallowedBiomeGroup SEA_ISLANDS = new HallowedBiomeGroup(1)
 		.addBiome(HallowedBiomes.HALLOWED_SEA, 1);
+
+	public static final HallowedBiomeGroup UPLANDS = new HallowedBiomeGroup(2)
+		.addBiome(HallowedBiomes.HAUNTED_UPLANDS, 1)
+		.addBiome(HallowedBiomes.HAUNTED_MOOR, 1);
 
 	private HallowedWorldGen() {
 		// NO-OP
 	}
 
 	public static void init() {
+		// Add dimension biome placement stuff here
+
+		addLargeSubBiome(HallowedBiomes.HALLOWED_LOWLANDS, HallowedBiomes.HALLOWED_LOWLANDS_PUMPKINS, 0.33f);
+		addHillsSubBiome(HallowedBiomes.HALLOWED_LOWLANDS, HallowedBiomes.HALLOWED_LOWLANDS_BARROWS);
+
 		addHillsSubBiome(HallowedBiomes.HALLOWED_FOREST, HallowedBiomes.HALLOWED_FOREST_HILLS);
 
 		// Islands
+		addSmallSubBiome(HallowedBiomes.HALLOWED_SEA, HallowedBiomes.HALLOWED_LOWLANDS, 0.22f);
 		addSmallSubBiome(HallowedBiomes.HALLOWED_SEA, HallowedBiomes.HALLOWED_FOREST, 0.22f);
+		addSmallSubBiome(HallowedBiomes.HALLOWED_SEA, HallowedBiomes.GHASTLY_DESERT, 0.22f);
+		addSmallSubBiome(HallowedBiomes.HALLOWED_SEA, HallowedBiomes.HALLOWED_LOWLANDS_PUMPKINS, 0.22f);
+
+		// Uplands Edge
+		setEdgeBiome(HallowedBiomes.HAUNTED_MOOR, HallowedBiomes.HAUNTED_UPLANDS);
 
 		// Rivers
 		setRiverBiome(HallowedBiomes.HALLOWED_SEA, null);
 		setRiverBiome(HallowedBiomes.HALLOWED_SHORE, HallowedBiomes.HALLOWED_SEA);
 
+		setRiverBiome(HallowedBiomes.HAUNTED_MOOR, null);
+		setRiverBiome(HallowedBiomes.HAUNTED_UPLANDS, null);
+
 		// Make HALLOWED more common by adding twice
-		addBiomeGroups(HALLOW, HALLOW, SEA_ISLANDS);
+		addBiomeGroups(HALLOW, HALLOW, SEA_ISLANDS, UPLANDS);
 	}
 
 	public static void addBiomeGroups(HallowedBiomeGroup... biomeGroups) {

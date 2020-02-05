@@ -1,8 +1,10 @@
 package io.github.alloffabric.thehallow.block;
 
+import io.github.alloffabric.thehallow.registry.HallowedBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlacementEnvironment;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.damage.DamageSource;
@@ -10,6 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -101,18 +104,18 @@ public class RestlessCactusBlock extends Block {
 	public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
 		Iterator<Direction> iterator = Direction.Type.HORIZONTAL.iterator();
 
-//		Direction direction;
-//		Material material;
-//		do {
-//			if (!iterator.hasNext()) {
-//				Block block = world.getBlockState(pos.down()).getBlock();
-//				return (block == HallowedBlocks.RESTLESS_CACTUS || block == HallowedBlocks.TAINTED_SAND) && !world.getBlockState(pos.up()).getMaterial().isLiquid();
-//			}
-//
-//			direction = iterator.next();
-//			BlockState state2 = world.getBlockState(pos.offset(direction));
-//			material = state2.getMaterial();
-//		} while (!material.isSolid() && !world.getFluidState(pos.offset(direction)).matches(FluidTags.LAVA));
+		Direction direction;
+		Material material;
+		do {
+			if (!iterator.hasNext()) {
+				Block block = world.getBlockState(pos.down()).getBlock();
+				return (block == HallowedBlocks.RESTLESS_CACTUS || block == HallowedBlocks.TAINTED_SAND) && !world.getBlockState(pos.up()).getMaterial().isLiquid();
+			}
+
+			direction = iterator.next();
+			BlockState state2 = world.getBlockState(pos.offset(direction));
+			material = state2.getMaterial();
+		} while (!material.isSolid() && !world.getFluidState(pos.offset(direction)).matches(FluidTags.LAVA));
 
 		return false;
 	}
